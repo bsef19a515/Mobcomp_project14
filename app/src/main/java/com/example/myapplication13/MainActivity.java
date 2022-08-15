@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     Button buttonAdd, buttonViewAll;
     EditText editName, editRollNumber;
