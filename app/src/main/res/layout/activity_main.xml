@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="292dp"
+        android:layout_height="43dp"
+        android:text="@string/name"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRollNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.634" />
+
+    <EditText
+        android:id="@+id/editTextRollNumber"
+        android:layout_width="297dp"
+        android:layout_height="39dp"
+        android:text="@string/rollno"
+        app:layout_constraintBottom_toTopOf="@+id/switchStudent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="176dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/title"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonViewAll"
+        android:layout_width="145dp"
+        android:layout_height="43dp"
+        android:text="@string/showlist"
+        app:layout_constraintBottom_toTopOf="@+id/listViewStudent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="@+id/buttonAdd"
+        app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="144dp"
+        android:layout_height="40dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toTopOf="@+id/buttonViewAll"
+        app:layout_constraintEnd_toEndOf="@+id/switchStudent"
+        app:layout_constraintStart_toStartOf="@+id/switchStudent"
+        app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
+
+    <Switch
+        android:id="@+id/switchStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enroll"
+        app:layout_constraintBottom_toTopOf="@+id/listViewStudent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ListView
+        android:id="@+id/listViewStudent"
+        android:layout_width="410dp"
+        android:layout_height="343dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

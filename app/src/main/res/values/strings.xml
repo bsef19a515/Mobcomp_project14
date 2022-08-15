@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application13</string>
+    <string name="name">Name</string>
+    <string name="rollno">Rollno</string>
+    <string name="title">Student Enrollment</string>
+    <string name="add">Enroll</string>
+    <string name="showlist">Show List</string>
+    <string name="enroll">isEnrolled</string>
+
+
+</resources>
