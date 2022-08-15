@@ -9,7 +9,7 @@ public class StudentModel {
     public String toString() {
         return "StudentModel{" +
                 "name='" + name + '\'' +
-                ", rollNmber=" + rollNumber +
+                ", rollNumber=" + rollNumber +
                 ", isEnroll=" + isEnroll +
                 '}';
     }
