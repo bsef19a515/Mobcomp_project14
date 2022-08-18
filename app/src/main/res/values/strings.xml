@@ -6,6 +6,9 @@
     <string name="add">Enroll</string>
     <string name="showlist">Show List</string>
     <string name="enroll">isEnrolled</string>
+    <string name="update">update</string>
+    <string name="delete">delete</string>
+
 
 
 </resources>

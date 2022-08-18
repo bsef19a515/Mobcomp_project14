@@ -56,10 +56,10 @@
         android:id="@+id/buttonAdd"
         android:layout_width="144dp"
         android:layout_height="48dp"
+        android:layout_marginStart="40dp"
         android:text="@string/add"
         app:layout_constraintBottom_toTopOf="@+id/buttonViewAll"
-        app:layout_constraintEnd_toEndOf="@+id/switchStudent"
-        app:layout_constraintStart_toStartOf="@+id/switchStudent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchStudent"
         app:layout_constraintVertical_bias="0.583" />
 
@@ -84,4 +84,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonViewAll"
         app:layout_constraintVertical_bias="0.298" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="137dp"
+        android:layout_height="48dp"
+        android:text="@string/update"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonAdd"
+        app:layout_constraintTop_toTopOf="@+id/buttonAdd" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="137dp"
+        android:layout_height="48dp"
+        android:text="@string/delete"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonViewAll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonViewAll"
+        app:layout_constraintTop_toTopOf="@+id/buttonViewAll" />
 </androidx.constraintlayout.widget.ConstraintLayout>
