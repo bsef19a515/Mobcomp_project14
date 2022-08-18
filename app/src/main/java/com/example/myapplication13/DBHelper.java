@@ -78,4 +78,11 @@ public class DBHelper extends SQLiteOpenHelper {
         return studentArrayList;
     }
 
+    boolean updateHandler(int roll, String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(STUDENT_NAME, name);
+        cv.put(STUDENT_ROLL, roll);
+        return db.update(STUDENT_TABLE, cv, STUDENT_ROLL+ "=" + roll, null) > 0;
+    }
 }

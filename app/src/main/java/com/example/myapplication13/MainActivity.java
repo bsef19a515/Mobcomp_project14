@@ -9,13 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button buttonAdd, buttonViewAll;
+    Button buttonAdd, buttonViewAll,buttonDelete,buttonUpdate;
     EditText editName, editRollNumber;
+    TextView results;
     Switch switchIsActive;
     ListView listViewStudent;
 
@@ -26,10 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
         buttonAdd = findViewById(R.id.buttonAdd);
         buttonViewAll = findViewById(R.id.buttonViewAll);
+        buttonDelete=findViewById(R.id.buttonDelete);
+        buttonUpdate=findViewById(R.id.buttonUpdate);
         editName = findViewById(R.id.editTextName);
         editRollNumber = findViewById(R.id.editTextRollNumber);
         switchIsActive = findViewById(R.id.switchStudent);
         listViewStudent = findViewById(R.id.listViewStudent);
+        results=findViewById(R.id.result);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             StudentModel studentModel;
@@ -59,7 +64,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!editName.getText().toString().isEmpty() && !editRollNumber.getText().toString().isEmpty()) {
+                    DBHelper dbHelper = new DBHelper(MainActivity.this);
+                    boolean result = dbHelper.updateHandler(Integer.parseInt(
+                            editRollNumber.getText().toString()), editName.getText().toString());
+                    if (result) {
+                        editName.setText("");
+                        editRollNumber.setText("");
+                        results.setText("Record Updated");
+                    } else {
+                        results.setText("No Record Found");
+                    }
+                } else {
+                    results.setText("fill correct");
+                }
+            }
+        });
+
+            }
+        }
 
 
-}
+
+
