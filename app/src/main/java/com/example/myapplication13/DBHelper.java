@@ -1,5 +1,7 @@
 package com.example.myapplication13;
 
+import static android.app.DownloadManager.COLUMN_ID;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -16,7 +18,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String STUDENT_ROLL = "StudentRollNumber";
     public static final String STUDENT_ENROLL = "IsEnrolled";
     public static final String STUDENT_TABLE = "StudentTable";
-
 
 
     public DBHelper(@Nullable Context context) {
@@ -39,7 +40,7 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void  addStudent(StudentModel STUDENTModel){
+    public void addStudent(StudentModel STUDENTModel) {
         SQLiteDatabase db = this.getWritableDatabase();
         //Hash map, as we did in bundles
         ContentValues cv = new ContentValues();
@@ -83,6 +84,13 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(STUDENT_NAME, name);
         cv.put(STUDENT_ROLL, roll);
-        return db.update(STUDENT_TABLE, cv, STUDENT_ROLL+ "=" + roll, null) > 0;
+        return db.update(STUDENT_TABLE, cv, STUDENT_ROLL + "=" + roll, null) > 0;
     }
+
+    boolean deleteHandler(int roll) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(STUDENT_TABLE, STUDENT_ROLL + "="+ roll,null)>0;
+    }
+
 }
+

@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 DBHelper dbHelper  = new DBHelper(MainActivity.this);
                 dbHelper.addStudent(studentModel);
+                results.setText("Data inserted");
             }
         });
         buttonViewAll.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +84,30 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!editRollNumber.getText().toString().isEmpty()) {
+                    DBHelper dbHelper = new DBHelper(MainActivity.this);
+                    boolean result = dbHelper.deleteHandler(Integer.parseInt(
+                            editRollNumber.getText().toString()));
+                    if (result) {
+                        editName.setText("");
+                        editRollNumber.setText("");
+                        results.setText("Record Deleted");
+                    } else {
+                        results.setText("No Record Found");
+                    }
+                } else{
+                    results.setText("fill correctly");
+                }
+            }
+
+
+        });
+
+
 
             }
         }

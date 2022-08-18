@@ -13,6 +13,12 @@ public class StudentModel {
                 ", isEnroll=" + isEnroll +
                 '}';
     }
+    public StudentModel() {
+        this.name = "";
+        this.rollNumber = 0;
+        this.isEnroll =true;
+    }
+
 
     public StudentModel(String name, int rollNumber, boolean isEnroll) {
         this.name = name;
